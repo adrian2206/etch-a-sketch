@@ -2,7 +2,7 @@ const grid = document.querySelector('#grid');
 for (let i = 0; i < 256; i++) {
     let square = document.createElement('div');
     square.className = 'square';
-    square.style.width = 'calc((100% - 8px * 2 - 8px * 15) / 16)';
+    square.style.width = 'calc((100% - 8px * 2) / 16)';
     grid.appendChild(square);
 }
 
@@ -38,7 +38,7 @@ btn.addEventListener('click', () => {
         for (let i = 0; i < size ** 2; i++) {
                 let square = document.createElement('div');
                 square.className = 'square';
-                square.style.width = `calc((100% - 8px * 2 - 8px * (${size} - 1)) / ${size})`;
+                square.style.width = `calc((100% - 8px * 2) / ${size})`;
                 grid.appendChild(square);
         }
     }
