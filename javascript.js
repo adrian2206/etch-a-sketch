@@ -6,9 +6,14 @@ for (let i = 0; i < 256; i++) {
     grid.appendChild(square);
 }
 
+function randomColor() {
+   color =  "#" + Math.floor(Math.random() * 16777215).toString(16);
+   return color;
+}
+
 document.addEventListener('mouseover', (e) => {
   if (e.target.classList.contains('square')) {
-    e.target.style.backgroundColor = "green";
+    e.target.style.backgroundColor = randomColor();
   }
 });
 
