@@ -12,9 +12,19 @@ function randomColor() {
 }
 
 document.addEventListener('mouseover', (e) => {
-  if (e.target.classList.contains('square')) {
-    e.target.style.backgroundColor = randomColor();
-  }
+    const el = e.target;
+    if(el.classList.contains(`square`)) {
+        let count = parseInt(el.dataset.count) || 0;
+        if (count < 9) {
+            let opacity = count +1;
+            el.style.backgroundColor = randomColor();
+            el.style.opacity = opacity / 10;
+            el.dataset.count = count +1;
+        } else if (count === 9) {
+            el.style.backgroundColor = "black";
+        }
+    }
+
 });
 
 
